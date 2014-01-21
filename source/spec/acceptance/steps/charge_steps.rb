@@ -9,7 +9,7 @@ end
 
 
 step "I have list of charges" do 
-  get_all_charges
+  #get_all_charges
 end 
 
 
