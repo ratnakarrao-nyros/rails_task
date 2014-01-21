@@ -8,7 +8,7 @@ end
 ### GIVEN ###
 
 
-step "I have list of charges available" do 
+step "I have list of charges" do 
   get_all_charges
 end 
 

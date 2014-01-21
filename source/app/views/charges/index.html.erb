@@ -5,7 +5,7 @@
 </div>
 
 
-<table class="table table-bordered">
+<table class="table  table-bordered">
   <thead>
     <tr>
       <th>Customer Name</th>
@@ -17,7 +17,7 @@
     <tr >
       <td colspan="5"><h1> Successful Charges </h1></td>
     </tr>
-    <% successful_charges.each do |charge| %>
+    <% @successful_charges.each do |charge| %>
       <tr>
         <td><%= charge.customer.first_name %></td>
         <td><%= humanized_money_with_symbol charge.amount %></td>
@@ -29,7 +29,7 @@
       <td colspan="5"><h1> Failed Charges </h1></td>
     </tr>
 
-    <% failed_charges.each do |charge| %>
+    <% @failed_charges.each do |charge| %>
       <tr class="failed">
         <td><%= charge.customer.first_name %></td>
         <td><%= humanized_money_with_symbol charge.amount %></td>
@@ -40,7 +40,7 @@
       <td colspan="5"><h1> Dispute Charges </h1></td>
     </tr>
 
-    <% dispute_charges.each do |charge| %>
+    <% @dispute_charges.each do |charge| %>
       <tr class="dispute">
         <td><%= charge.customer.first_name %></td>
         <td><%= humanized_money_with_symbol charge.amount %></td>
