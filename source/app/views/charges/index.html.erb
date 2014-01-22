@@ -18,7 +18,7 @@
       <td colspan="5"><h1> Successful Charges </h1></td>
     </tr>
     <% @successful_charges.each do |charge| %>
-      <tr>
+      <tr class="success">
         <td><%= charge.customer.first_name %></td>
         <td><%= humanized_money_with_symbol charge.amount %></td>
         <td><%= charge.created_at.strftime("%B %d %Y") %></td>

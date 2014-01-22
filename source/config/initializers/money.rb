@@ -1,4 +1,5 @@
 # encoding : utf-8
+require "money/core_extensions"
 
 MoneyRails.configure do |config|
 

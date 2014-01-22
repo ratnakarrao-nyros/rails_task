@@ -6,16 +6,16 @@ class Charge < ActiveRecord::Base
 
 
   def self.successful_charges
-  	all(:conditions => ['paid =? And refunded = ?', true ,false ] )
+    where('paid =? And refunded = ?', true ,false).to_a
   end
 
 
   def self.failed_charges
-  	all(:conditions => ['paid =? And refunded = ?', false ,false ] )
+    where('paid =? And refunded = ?', false ,false).to_a
   end
 
   def self.dispute_charges
-  	all(:conditions => ['paid = ? AND refunded = ?', false ,true])
+    where('paid =? And refunded = ?', false ,true).to_a
   end
 
 

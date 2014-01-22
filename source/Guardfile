@@ -1,11 +1,11 @@
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
-guard :bundler do
-  watch('Gemfile')
+#guard :bundler do
+ # watch('Gemfile')
   # Uncomment next line if your Gemfile contains the `gemspec' command.
   # watch(/^.+\.gemspec/)
-end
+#end
 
 #guard 'cucumber' do
  # watch(%r{^features/.+\.feature$})
@@ -13,23 +13,28 @@ end
  # watch(%r{^features/step_definitions/(.+)_steps\.rb$}) { |m| Dir[File.join("**/#{m[1]}.feature")][0] || 'features' }
 #end
 
-guard 'livereload' do
-  watch(%r{app/views/.+\.(erb|haml|slim)$})
-  watch(%r{app/helpers/.+\.rb})
-  watch(%r{public/.+\.(css|js|html)})
-  watch(%r{config/locales/.+\.yml})
-  # Rails Assets Pipeline
-  watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }
-end
+#guard 'livereload' do
+ # watch(%r{app/views/.+\.(erb|haml|slim)$})
+ # watch(%r{app/helpers/.+\.rb})
+ # watch(%r{public/.+\.(css|js|html)})
+ # watch(%r{config/locales/.+\.yml})
+ # # Rails Assets Pipeline
+ # watch(%r{(app|vendor)(/assets/\w+/(.+\.(css|js|html|png|jpg))).*}) { |m| "/assets/#{m[3]}" }
+#end
 
-guard 'rails' do
-  watch('Gemfile.lock')
-  watch(%r{^(config|lib)/.*})
-end
+#guard 'rails' do
+#  watch('Gemfile.lock')
+#  watch(%r{^(config|lib)/.*})
+#end
 
 
 
-guard :rspec , cmd: 'turnip' , :all_on_start => false, :all_after_pass => false do
+#guard 'rspec', :version => 2, :cli => "--color --drb", :turnip => true, all_on_start: false, all_after_pass: false  do
+ # ...
+#end
+
+
+guard :rspec ,:version => 2,  cmd: '--color' , :turnip => true   do
 
   watch(%r{^spec/.+_spec\.rb$})
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
